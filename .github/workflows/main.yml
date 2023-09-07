@@ -1,0 +1,31 @@
+on: [push]
+
+jobs:
+  gist-sync:
+    name: gist-sync
+    runs-on: ubuntu-latest
+    steps:
+    #PIC18F4550
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F4550
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/2fb4a77c8cc3d2c07dd6185e4c4ceff4
+          gist_title: 9-rgb-MPLAB-4550.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F4550/9_PWM2.X/main.c
+          file_encoding: ISO-8859-1
+    #PIC18F45K50
+      - name: Checkout
+        uses: actions/checkout@v2
+      - uses: vhperaltaj/gist-sync-action@v1.0.0
+        id: PIC18F45K50
+        with:
+          auth: ${{ secrets.GIST_TOKEN }}
+          gist_url: https://gist.github.com/microside-mx/6bda9ef7acecff53809ff808c8c01ee2
+          gist_title: 9-mplab-rgb.c
+          gist_description: Prácticas MPLABX
+          github_file: Proyecto/PIC18F45K50/9_PWM2.X/main.c
+          file_encoding: ISO-8859-1
