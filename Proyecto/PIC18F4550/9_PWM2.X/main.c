@@ -74,10 +74,10 @@ void SetPWM( void );
 void main( void )
 {
     InitPorts();                    // Configura el pin C2 como salida
-    PWMinit();                      // Configura el mÃ³dulo PWM
+    PWMinit();                      // Configura el módulo PWM
     while ( 1 ) {
         LATB = 0x01;                // Enciende el LED Rojo
-        setPWM();                   // AtenÃºa el brillo del LED
+        setPWM();                   // Atenúa el brillo del LED
         LATB = 0x02;                // Enciende el LED Verde
         setPWM();
         LATB = 0x04;                // Enciende el LED Azul
